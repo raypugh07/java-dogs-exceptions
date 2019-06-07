@@ -45,33 +45,33 @@
         </rollingPolicy>
     </appender>
 
-    <root level="OFF">
+    <root level="OFF" additivity="false">
         <appender-ref ref="STDOUT"/>
         <appender-ref ref="FILE"/>
 
 
     </root>
 
-    <logger name="org.apache.catalina" level="OFF">
+    <logger name="org.apache.catalina" level="OFF" additivity="false">
         <appender-ref ref="TOMCAT" />
         <appender-ref ref="STDOUT" />
     </logger>
 
-    <logger name="org.apache.coyote" level="OFF">
+    <logger name="org.apache.coyote" level="OFF" additivity="false">
         <appender-ref ref="TOMCAT" />
         <appender-ref ref="STDOUT" />
     </logger>
 
-    <logger name="org.apache.tomcat" level="OFF">
+    <logger name="org.apache.tomcat" level="OFF" additivity="false">
         <appender-ref ref="TOMCAT" />
         <appender-ref ref="STDOUT" />
     </logger>
 
-    <logger name="org.springframework.boot" level="OFF">
+    <logger name="org.springframework.boot" level="OFF" additivity="false">
         <appender-ref ref="STDOUT"/>
     </logger>
 
-    <logger name="com.lambdaschool" level="INFO">
+    <logger name="com.lambdaschool" level="TRACE" additivity="false">
         <appender-ref ref="STDOUT"/>
     </logger>
 

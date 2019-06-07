@@ -24,14 +24,14 @@ public class DogController {
     private static final Logger logger = LoggerFactory.getLogger(DogController.class);
 
     @Autowired
-    RabbitTemplate rt;
+  //  RabbitTemplate rt;
 
     // localhost:8080/dogs/dogs
     @GetMapping(value = "/dogs")
     public ResponseEntity<?> getAllDogs() {
         logger.info("/dogs/dogs accessed");
-        MessageDetail message = new MessageDetail("/dogs/dogs accessed", 7, false);
-        rt.convertAndSend(DogsinitialApplication.QUEUE_NAME_HIGH, message);
+        //MessageDetail message = new MessageDetail("/dogs/dogs accessed", 7, false);
+       // rt.convertAndSend(DogsinitialApplication.QUEUE_NAME_HIGH, message);
         return new ResponseEntity<>(DogsinitialApplication.ourDogList.dogList, HttpStatus.OK);
     }
 
@@ -40,8 +40,8 @@ public class DogController {
     public ResponseEntity<?> getDogDetail(@PathVariable long id) throws ResourceNotFoundException {
         logger.trace("/dogs/dog " + id + " accessed");
 
-        MessageDetail message = new MessageDetail("/dogs/dog accessed", 1, true);
-        rt.convertAndSend(DogsinitialApplication.QUEUE_NAME_LOW, message);
+        //MessageDetail message = new MessageDetail("/dogs/dog accessed", 1, true);
+       // rt.convertAndSend(DogsinitialApplication.QUEUE_NAME_LOW, message);
         Dog rtnDog;
         if (DogsinitialApplication.ourDogList.findDog(d -> (d.getId() == id)) == null) {
             throw new ResourceNotFoundException("Dog with id " + id + " not found");

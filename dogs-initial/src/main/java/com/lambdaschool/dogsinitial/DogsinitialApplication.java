@@ -33,7 +33,7 @@ public class DogsinitialApplication
         dispatcherServlet.setThrowExceptionIfNoHandlerFound(true);
     }
 
-    @Bean
+   /* @Bean
     public TopicExchange appExchange(){
         return new TopicExchange(EXCHANGE_NAME);
     }
@@ -61,7 +61,7 @@ public class DogsinitialApplication
     @Bean
     public Jackson2JsonMessageConverter producerJackson2JsonMessageConverter(){
         return new Jackson2JsonMessageConverter();
-    }
+    }*/
 
 
 }

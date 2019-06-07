@@ -1,9 +1,13 @@
 package com.lambdaschool.dogsinitial.Model;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.concurrent.atomic.AtomicLong;
 
 public class Dog
 {
+    private static final Logger logger= LoggerFactory.getLogger(Dog.class);
     private static final AtomicLong counter = new AtomicLong();
     private long id;
     private String breed;
@@ -16,6 +20,9 @@ public class Dog
         this.breed = breed;
         this.weight = weight;
         this.apartmentSuitable = apartmentSuitable;
+
+        logger.info("We created a dog");
+        logger.debug("Yes we created a dog with id" + this.id);
     }
 
     public Dog() {
